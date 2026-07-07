@@ -1,6 +1,8 @@
 # davidpmcmillan.com
 
-Personal/portfolio site for David P. McMillan.
+Independent strategy execution consulting site for David McMillan, built from his
+LinkedIn background (strategy design, execution governance, transformation delivery;
+20 years with Palladium, now David McMillan Consulting).
 
 ## Setup status
 
@@ -8,8 +10,13 @@ Personal/portfolio site for David P. McMillan.
 - [x] GitHub repo created under the `DaveMcMill` account
 - [x] Domain `davidpmcmillan.com` purchased on Cloudflare
 - [x] Domain connected to hosting (Cloudflare Worker, auto-deploys from GitHub on push to `main`)
-- [x] Live at https://davidpmcmillan.com (placeholder "under construction" homepage)
-- [ ] Content: bio, photo, work/portfolio, contact info
+- [x] Live at https://davidpmcmillan.com
+- [x] Full site content built: hero, stats, pain points, services, selected results,
+      process, insights/publications, about, final CTA, footer with contact info
+- [ ] Real headshot photo (currently a gradient placeholder in the About section)
+- [ ] Testimonials (none provided yet — no section added; add one when available)
+- [ ] Wire up "Start a Conversation" CTAs to a scheduling link (e.g. Calendly) if
+      desired, instead of just anchoring to the footer contact info
 
 ## Notes
 
