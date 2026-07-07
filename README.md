@@ -13,6 +13,12 @@ LinkedIn background (strategy design, execution governance, transformation deliv
 - [x] Live at https://davidpmcmillan.com
 - [x] Full site content built: hero, stats, pain points, services, selected results,
       process, insights/publications, about, final CTA, footer with contact info
+- [x] Color palette matched to the David McMillan Consulting logo (navy, forest
+      green, slate blue-gray, warm tan/gold, charcoal text) — see `css/style.css`
+      `:root` variables
+- [ ] Actual logo file/image not yet added to the site (only colors were sampled
+      from it) — add `images/logo.png` (or `.svg`) and wire it into the header/footer
+      once the file is available
 - [ ] Real headshot photo (currently a gradient placeholder in the About section)
 - [ ] Testimonials (none provided yet — no section added; add one when available)
 - [ ] Wire up "Start a Conversation" CTAs to a scheduling link (e.g. Calendly) if
