@@ -373,6 +373,7 @@ img { max-width: 100%; display: block; }
 .about-photo {
   width: 100%;
   aspect-ratio: 4 / 5;
+  object-fit: cover;
   background: linear-gradient(160deg, var(--forest) 0%, var(--slate) 55%, var(--navy) 100%);
   border-radius: var(--radius);
 }
