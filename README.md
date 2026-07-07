@@ -23,7 +23,8 @@ LinkedIn background (strategy design, execution governance, transformation deliv
       `images/apple-touch-icon.png`. Logo PNGs have opaque white backgrounds (no
       alpha), so the icon is only used on light backgrounds (header) — the navy
       footer still uses the text wordmark to avoid a visible white box.
-- [ ] Real headshot photo (currently a gradient placeholder in the About section)
+- [x] Real headshot added: `images/David-McMillan_Headshot.jpg` in the About section
+      (gradient kept as a CSS fallback background, not visible under the photo)
 - [ ] Testimonials (none provided yet — no section added; add one when available)
 - [ ] Wire up "Start a Conversation" CTAs to a scheduling link (e.g. Calendly) if
       desired, instead of just anchoring to the footer contact info
