@@ -1,11 +1,17 @@
-/* ---------- Base ---------- */
+/* ---------- Base ----------
+   Palette pulled from the David McMillan Consulting logo:
+   navy + forest green (letterform tops) + slate blue-gray (D base)
+   + warm tan (the divider rules flanking "CONSULTING"). */
 :root {
-  --navy: #0f1e33;
-  --navy-2: #16294a;
-  --ink: #1a2233;
+  --navy: #16305c;
+  --navy-2: #0d1f3d;
+  --forest: #3f5b48;
+  --slate: #6c8598;
+  --charcoal: #3a4552;
+  --muted: #5b6472;
   --paper: #f7f5f0;
   --paper-2: #efece3;
-  --gold: #b8923f;
+  --gold: #c9a876;
   --white: #ffffff;
   --line: #e2ded2;
   --max: 1120px;
@@ -20,7 +26,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color: var(--ink);
+  color: var(--charcoal);
   background: var(--paper);
   line-height: 1.6;
 }
@@ -69,7 +75,7 @@ img { max-width: 100%; display: block; }
   background: var(--gold);
   color: var(--navy);
 }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(184,146,63,0.35); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(201,168,118,0.35); }
 .btn-ghost {
   background: transparent;
   color: var(--navy);
@@ -100,7 +106,7 @@ img { max-width: 100%; display: block; }
   color: var(--navy);
   text-decoration: none;
 }
-.brand span { color: var(--gold); font-style: italic; font-weight: 500; }
+.brand span { color: var(--forest); font-style: italic; font-weight: 500; }
 
 .nav {
   display: flex;
@@ -109,7 +115,7 @@ img { max-width: 100%; display: block; }
 }
 .nav a {
   text-decoration: none;
-  color: var(--ink);
+  color: var(--charcoal);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -215,7 +221,7 @@ img { max-width: 100%; display: block; }
   padding-left: 1.75rem;
   margin-bottom: 1.1rem;
   font-size: 1.05rem;
-  color: #3a4356;
+  color: var(--charcoal);
 }
 .pain-list li::before {
   content: "";
@@ -242,7 +248,7 @@ img { max-width: 100%; display: block; }
 }
 .section-sub {
   max-width: 640px;
-  color: #55607a;
+  color: var(--muted);
   margin-bottom: 2.5rem;
   font-size: 1.05rem;
 }
@@ -265,7 +271,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 0.6rem;
 }
 .service-card p {
-  color: #55607a;
+  color: var(--muted);
   font-size: 0.95rem;
   margin: 0;
 }
@@ -284,6 +290,8 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   padding: 1.5rem;
 }
+.result-card:nth-child(3n+2) { border-left-color: var(--forest); }
+.result-card:nth-child(3n) { border-left-color: var(--slate); }
 .result-tag {
   display: inline-block;
   font-weight: 700;
@@ -295,7 +303,7 @@ img { max-width: 100%; display: block; }
 }
 .result-card p {
   margin: 0;
-  color: #444d61;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
@@ -342,7 +350,7 @@ img { max-width: 100%; display: block; }
   color: var(--navy);
 }
 .insight-meta {
-  color: #7a8399;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -357,10 +365,10 @@ img { max-width: 100%; display: block; }
 .about-photo {
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: linear-gradient(160deg, var(--navy-2), var(--gold));
+  background: linear-gradient(160deg, var(--forest) 0%, var(--slate) 55%, var(--navy) 100%);
   border-radius: var(--radius);
 }
-.about-copy p { color: #444d61; }
+.about-copy p { color: var(--muted); }
 .credentials {
   list-style: none;
   padding: 0;
@@ -388,7 +396,7 @@ img { max-width: 100%; display: block; }
 }
 .cta-final-inner { max-width: 620px; margin: 0 auto; }
 .cta-final h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
-.cta-final p { color: #55607a; margin-bottom: 2rem; }
+.cta-final p { color: var(--muted); margin-bottom: 2rem; }
 
 /* ---------- Footer ---------- */
 .site-footer {
