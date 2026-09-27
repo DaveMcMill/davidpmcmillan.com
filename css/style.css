@@ -310,42 +310,55 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Selected Clients ---------- */
-.clients { padding: 5rem 0 1rem; }
-.clients-grid {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+.clients { padding: 1rem 0 5rem; }
+.clients-marquee {
+  margin-top: 2rem;
+  overflow: hidden;
+  background: var(--white);
   border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
-.clients-grid li {
+.clients-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: max-content;
+  animation: clients-scroll 70s linear infinite;
+}
+.clients-marquee:hover .clients-track { animation-play-state: paused; }
+.clients-track li {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 104px;
-  padding: 1rem;
-  background: var(--white);
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  height: 112px;
+  padding: 0 2.5rem;
 }
-.clients-grid img {
-  max-width: 100%;
-  height: auto;
+.clients-track img {
+  display: block;
   filter: grayscale(1);
   opacity: 0.72;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
-.clients-grid li.logo-light img { filter: grayscale(1) brightness(0.62) contrast(1.2); }
-.clients-grid li:hover img, .clients-grid li.logo-light:hover img { filter: none; opacity: 1; }
-@media (max-width: 900px) { .clients-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 560px) {
-  .clients-grid { grid-template-columns: repeat(3, 1fr); }
-  .clients-grid li { height: 84px; padding: 0.6rem; }
-  .clients-grid img { max-height: 44px; width: auto; }
+.clients-track li.logo-light img { filter: grayscale(1) brightness(0.62) contrast(1.2); }
+.clients-track li:hover img { filter: none; opacity: 1; }
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-@media (prefers-reduced-motion: reduce) { .clients-grid img { transition: none; } }
+@media (max-width: 560px) {
+  .clients-track li { height: 88px; padding: 0 1.5rem; }
+  .clients-track img { max-height: 44px; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee { overflow-x: auto; }
+  .clients-track { animation: none; }
+  .clients-track li[aria-hidden="true"] { display: none; }
+  .clients-track img { transition: none; }
+}
 
 /* ---------- Results ---------- */
 .results { padding: 5rem 0; }
