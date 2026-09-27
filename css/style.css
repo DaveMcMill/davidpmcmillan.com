@@ -3,17 +3,22 @@
    navy + forest green (letterform tops) + slate blue-gray (D base)
    + warm tan (the divider rules flanking "CONSULTING"). */
 :root {
-  --navy: #16305c;
-  --navy-2: #0d1f3d;
-  --forest: #3f5b48;
-  --slate: #6c8598;
-  --charcoal: #3a4552;
-  --muted: #5b6472;
-  --paper: #f7f5f0;
-  --paper-2: #efece3;
-  --gold: #c9a876;
+  /* Brand palette from the David McMillan Consulting PowerPoint and Word templates */
+  --navy: #284B73;
+  --navy-2: #1E3A5A;
+  --teal: #0D6B6B;
+  --gold: #C39A4E;
+  --blue: #3C6FA6;
+  --slate: #798593;
+  --forest: #2F5B3F;
+  --sage: #6BA379;
+  --charcoal: #262626;
+  --muted: #56606C;
+  --paper: #F3F6F7;
+  --paper-2: #E9EEF1;
   --white: #ffffff;
-  --line: #e2ded2;
+  --line: #DCE3E8;
+  --serif: Georgia, "Times New Roman", serif;
   --max: 1120px;
   --radius: 10px;
   font-size: 16px;
@@ -27,12 +32,12 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--charcoal);
-  background: var(--paper);
+  background: var(--white);
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--serif);
   color: var(--navy);
   line-height: 1.15;
   margin: 0;
@@ -72,10 +77,10 @@ img { max-width: 100%; display: block; }
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 .btn-primary {
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
 }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(201,168,118,0.35); }
+.btn-primary:hover { transform: translateY(-1px); background: var(--teal); box-shadow: 0 8px 20px rgba(40,75,115,0.25); }
 .btn-ghost {
   background: transparent;
   color: var(--navy);
@@ -89,7 +94,7 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247,245,240,0.9);
+  background: rgba(255,255,255,0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -99,22 +104,8 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   height: 76px;
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--navy);
-  text-decoration: none;
-}
-.brand span { color: var(--forest); font-style: italic; font-weight: 500; }
-.brand-mark {
-  height: 40px;
-  width: 40px;
-  mix-blend-mode: multiply;
-}
+.brand { display: flex; align-items: center; text-decoration: none; }
+.brand-logo { height: 46px; width: auto; }
 
 .nav {
   display: flex;
@@ -127,14 +118,14 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   font-size: 0.95rem;
 }
-.nav a:hover { color: var(--gold); }
+.nav a:hover { color: var(--teal); }
 .nav-cta {
   background: var(--navy);
   color: var(--white) !important;
   padding: 0.6rem 1.25rem;
   border-radius: 999px;
 }
-.nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+.nav-cta:hover { background: var(--teal) !important; }
 
 .nav-toggle {
   display: none;
@@ -152,31 +143,43 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (echoes the template cover: white field, boardwalk path, arc lines) ---------- */
 .hero {
-  padding: 6rem 0 5rem;
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
-  color: var(--white);
+  position: relative;
+  padding: 6.5rem 0 6rem;
+  background: var(--white) url(../images/brand/hero-path.jpg) right center / auto 100% no-repeat;
+  color: var(--charcoal);
+  min-height: 560px;
 }
-.hero-inner { max-width: 780px; }
+.hero-inner { max-width: min(560px, 48%); margin-left: 0; }
+.hero .wrap.hero-inner { margin-left: max(1.5rem, calc((100% - var(--max)) / 2 + 1.5rem)); padding: 0; }
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--gold);
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
   margin-bottom: 1.25rem;
 }
-.hero h1 {
-  color: var(--white);
-  font-size: clamp(2.25rem, 5vw, 3.4rem);
-  font-weight: 600;
+.hero .eyebrow::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--sage);
   margin-bottom: 1.5rem;
 }
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(2.25rem, 4.6vw, 3.3rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
 .hero-sub {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.82);
-  max-width: 640px;
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 560px;
 }
 .hero-actions {
   display: flex;
@@ -184,11 +187,18 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
   margin-top: 2rem;
 }
-.hero .btn-ghost {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.5);
+@media (max-width: 820px) {
+  .hero { background-image: none; padding: 4rem 0 0; min-height: 0; }
+  .hero h1 br { display: none; }
+  .hero .wrap.hero-inner { max-width: none; margin: 0 auto; padding: 0 1.5rem; }
+  .hero::after {
+    content: "";
+    display: block;
+    height: 240px;
+    margin-top: 3rem;
+    background: url(../images/brand/hero-path-mobile.jpg) center 40% / cover no-repeat;
+  }
 }
-.hero .btn-ghost:hover { background: var(--white); color: var(--navy); }
 
 /* ---------- Stats ---------- */
 .stats {
@@ -204,7 +214,7 @@ img { max-width: 100%; display: block; }
 }
 .stat-num {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: var(--serif);
   font-size: 2.25rem;
   color: var(--gold);
   font-weight: 600;
@@ -217,7 +227,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Pain ---------- */
-.pain { padding: 5rem 0; }
+.pain { padding: 5rem 0; background: var(--white); }
 .pain-inner { max-width: 820px; margin: 0 auto; }
 .pain h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -225,14 +235,14 @@ img { max-width: 100%; display: block; }
 }
 .pain h2.pain-stat {
   font-size: clamp(3rem, 7vw, 4.5rem);
-  font-weight: 700;
   line-height: 1;
   margin-bottom: 0.75rem;
-  color: var(--forest);
+  font-weight: 400;
+  color: var(--teal);
   font-variant-numeric: lining-nums;
 }
 .pain-lead {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--serif);
   font-size: clamp(1.2rem, 2.2vw, 1.45rem);
   line-height: 1.45;
   color: var(--navy);
@@ -267,7 +277,7 @@ img { max-width: 100%; display: block; }
   background: var(--gold);
 }
 .pain-close {
-  font-family: "Fraunces", serif;
+  font-family: var(--serif);
   font-size: 1.2rem;
   color: var(--navy);
   font-style: italic;
@@ -275,7 +285,17 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Section headings ---------- */
+.section-title::before {
+  content: "";
+  display: block;
+  width: 260px;
+  max-width: 70%;
+  height: 28px;
+  margin-bottom: 0.9rem;
+  background: url(../images/brand/section-wave.png) left center / contain no-repeat;
+}
 .section-title {
+  font-weight: 400;
   font-size: clamp(1.75rem, 3vw, 2.4rem);
   margin-bottom: 0.75rem;
 }
@@ -304,7 +324,7 @@ img { max-width: 100%; display: block; }
   display: block;
   width: 56px;
   height: 56px;
-  color: #16305c;
+  color: var(--navy);
   margin-bottom: 1rem;
 }
 .service-icon img,
@@ -388,21 +408,28 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Results ---------- */
-.results { padding: 5rem 0; }
+.results { padding: 5rem 0; background: var(--paper); }
 .results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .result-card {
+  position: relative;
   background: var(--white);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--gold);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.75rem;
 }
-.result-card:nth-child(3n+2) { border-left-color: var(--forest); }
-.result-card:nth-child(3n) { border-left-color: var(--slate); }
+.result-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), var(--sage));
+}
 .result-tag {
   display: inline-block;
   font-weight: 700;
@@ -443,7 +470,7 @@ img { max-width: 100%; display: block; }
 .result-icon svg { width: 24px; height: 24px; }
 
 /* ---------- Testimonials ---------- */
-.testimonials { padding: 5rem 0; background: var(--paper-2); overflow: hidden; }
+.testimonials { padding: 5rem 0; background: var(--paper) url(../images/brand/arcs-bg-light.jpg) right center / cover no-repeat; overflow: hidden; }
 .t-head {
   display: flex;
   align-items: flex-end;
@@ -496,11 +523,11 @@ img { max-width: 100%; display: block; }
 }
 .t-quote { margin: 0; }
 .t-quote p {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--serif);
   font-size: 1.02rem;
   font-style: italic;
   line-height: 1.55;
-  color: var(--navy);
+  color: var(--forest);
   margin: 0;
 }
 .t-person {
@@ -527,7 +554,7 @@ img { max-width: 100%; display: block; }
 .t-meta { display: flex; flex-direction: column; line-height: 1.35; min-width: 0; }
 .t-name { font-weight: 700; color: var(--navy); }
 .t-title { font-size: 0.85rem; color: var(--muted); }
-.t-org { font-size: 0.85rem; font-weight: 600; color: var(--forest); }
+.t-org { font-size: 0.85rem; font-weight: 600; color: var(--teal); }
 @media (prefers-reduced-motion: reduce) { .t-track { scroll-behavior: auto; } }
 
 /* ---------- Process ---------- */
@@ -542,7 +569,7 @@ img { max-width: 100%; display: block; }
 }
 .process-num {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: var(--serif);
   color: var(--gold);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -568,7 +595,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .insight-title {
-  font-family: "Fraunces", serif;
+  font-family: var(--serif);
   font-size: 1.05rem;
   color: var(--navy);
 }
@@ -596,7 +623,7 @@ img { max-width: 100%; display: block; }
 .insight-tile:hover,
 .insight-tile:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(13, 31, 61, 0.12);
+  box-shadow: 0 12px 28px rgba(40, 75, 115, 0.14);
   border-color: var(--slate);
 }
 .insight-tile:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
@@ -675,12 +702,12 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Final CTA ---------- */
 .cta-final {
-  background: var(--paper-2);
-  padding: 5rem 0;
+  background: var(--white) url(../images/brand/arcs-corner.png) right bottom / min(620px, 70%) auto no-repeat;
+  padding: 6rem 0;
   text-align: center;
 }
 .cta-final-inner { max-width: 620px; margin: 0 auto; }
-.cta-final h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
+.cta-final h2 { font-weight: 400; font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 0.75rem; }
 .cta-final p { color: var(--muted); margin-bottom: 2rem; }
 
 /* ---------- Footer ---------- */
@@ -697,7 +724,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .brand-footer {
-  font-family: "Fraunces", serif;
+  font-family: var(--serif);
   color: var(--white);
   font-size: 1.1rem;
   margin: 0 0 0.25rem;
