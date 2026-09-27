@@ -309,6 +309,44 @@ img { max-width: 100%; display: block; }
   margin: 0;
 }
 
+/* ---------- Selected Clients ---------- */
+.clients { padding: 5rem 0 1rem; }
+.clients-grid {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.clients-grid li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px;
+  padding: 1rem;
+  background: var(--white);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.clients-grid img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.clients-grid li.logo-light img { filter: grayscale(1) brightness(0.62) contrast(1.2); }
+.clients-grid li:hover img, .clients-grid li.logo-light:hover img { filter: none; opacity: 1; }
+@media (max-width: 900px) { .clients-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 560px) {
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  .clients-grid li { height: 84px; padding: 0.6rem; }
+  .clients-grid img { max-height: 44px; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .clients-grid img { transition: none; } }
+
 /* ---------- Results ---------- */
 .results { padding: 5rem 0; }
 .results-grid {
