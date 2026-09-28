@@ -62,3 +62,17 @@ to the GitHub repo (not GitHub Pages). Worker URL:
 https://davidpmcmillan.david-p-mcmillan.workers.dev — custom domain
 `davidpmcmillan.com` is connected via the project's Domains tab ("Add Domain"),
 not a `CNAME` file (that mechanism is GitHub Pages-specific and unused here).
+
+## SEO / AEO
+
+- `robots.txt` allows all crawlers, declares `Content-Signal: search=yes, ai-input=yes`
+  (AI training left unspecified), and points to `sitemap.xml`. Cloudflare may prepend
+  its own managed comments; also check Cloudflare > AI Crawl Control so AI assistants
+  are not blocked at the network level.
+- `llms.txt` gives AI assistants a plain-language summary of David and the practice.
+- `index.html` head carries the canonical URL, Open Graph/Twitter tags with
+  `images/brand/share-card.jpg` (1200x630), and a JSON-LD `@graph` (Person,
+  ProfessionalService, WebSite, publications, FAQPage). Keep the FAQPage JSON-LD in
+  sync with the visible FAQ section. Do not add Review/AggregateRating markup for the
+  testimonials (Google disallows self-serving review markup).
+- Update `sitemap.xml` `<lastmod>` when content changes.

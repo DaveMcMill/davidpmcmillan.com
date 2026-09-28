@@ -717,6 +717,35 @@ img { max-width: 100%; display: block; }
 .cta-final h2 { font-weight: 400; font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 0.75rem; }
 .cta-final p { color: var(--muted); margin-bottom: 2rem; }
 
+/* ---------- FAQ ---------- */
+.faq { padding: 5rem 0; background: var(--paper); }
+.faq-list { max-width: 860px; }
+.faq-list { border-top: 1px solid var(--line); margin-top: 1.5rem; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--teal);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+.faq-item h3 { font-size: 1.12rem; font-weight: 400; margin: 0; }
+.faq-item p { color: var(--muted); margin: 0 0 1.4rem; max-width: 70ch; }
+@media (prefers-reduced-motion: reduce) { .faq-item summary::after { transition: none; } }
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--navy);
