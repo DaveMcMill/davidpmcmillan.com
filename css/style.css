@@ -287,15 +287,6 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Section headings ---------- */
-.section-title::before {
-  content: "";
-  display: block;
-  width: 260px;
-  max-width: 70%;
-  height: 28px;
-  margin-bottom: 0.9rem;
-  background: url(../images/brand/section-wave.png) left center / contain no-repeat;
-}
 .section-title {
   font-weight: 400;
   font-size: clamp(1.75rem, 3vw, 2.4rem);
