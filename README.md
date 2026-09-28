@@ -49,6 +49,10 @@ Canadian Institute for Health Research, Canadian Blood Services, City of Palo
 Alto Utilities, the FBI, U.S. Economic Development Agency, Millipore, Gold
 Fields, USAID/CATALYZE) are safe to use by name.
 
+Exception approved on 2026-09-27 at the site owner's request: the International
+Council on Mining and Metals (ICMM) is now named openly in Selected Results
+(previously the anonymized "Global Mining Sector" tile).
+
 ## Notes
 
 This project uses a separate GitHub account (`DaveMcMill`) and a separate Cloudflare
