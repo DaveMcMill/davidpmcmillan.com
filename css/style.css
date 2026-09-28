@@ -66,6 +66,8 @@ img { max-width: 100%; display: block; }
 }
 .skip-link:focus { left: 1rem; top: 1rem; }
 
+.nowrap { white-space: nowrap; }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
@@ -556,6 +558,7 @@ img { max-width: 100%; display: block; }
 .t-title { font-size: 0.85rem; color: var(--muted); }
 .t-org { font-size: 0.85rem; font-weight: 600; color: var(--teal); }
 @media (prefers-reduced-motion: reduce) { .t-track { scroll-behavior: auto; } }
+@media (max-width: 620px) { .testimonials { background-image: none; } }
 
 /* ---------- Process ---------- */
 .process { padding: 5rem 0; background: var(--navy); color: var(--white); }
